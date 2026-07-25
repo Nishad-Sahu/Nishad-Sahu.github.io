@@ -219,7 +219,7 @@ a {
 
 .hero-slide-three {
   background-image: url("assets/mill19-buttigieg-av-demo.jpg");
-  background-position: center;
+  background-position: center top;
   animation-delay: 12s;
 }
 
@@ -661,7 +661,7 @@ h1 {
   }
 
   .hero-slide-three {
-    background-position: 58% center;
+    background-position: 58% top;
   }
 
   h1 {
