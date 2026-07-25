@@ -16,6 +16,7 @@ The first content pass was built from public profile and publication pages:
 ## Files
 
 - `index.html`: site content and structure
+- `about.html`, `research.html`, `publications.html`, `media.html`, `alma-mater.html`, `impact.html`, `history.html`, `contact.html`: standalone pages for the main navigation tabs
 - `styles.css`: visual design and responsive layout
 - `script.js`: mobile navigation and footer year
 - `assets/cmu-av-poster-demo.jpg`: CMU autonomous vehicle poster/demo hero photo
