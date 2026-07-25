@@ -160,10 +160,19 @@ a {
   align-items: flex-end;
   overflow: hidden;
   padding: 128px 22px 72px;
-  background:
-    linear-gradient(90deg, rgba(10, 24, 36, 0.84) 0%, rgba(10, 24, 36, 0.56) 42%, rgba(10, 24, 36, 0.12) 100%),
-    url("assets/hero-portfolio.png") center / cover no-repeat;
+  background: #0a1824;
   color: var(--white);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(10, 24, 36, 0.92) 0%, rgba(10, 24, 36, 0.72) 38%, rgba(10, 24, 36, 0.28) 100%),
+    linear-gradient(0deg, rgba(10, 24, 36, 0.28), rgba(10, 24, 36, 0.08));
+  pointer-events: none;
 }
 
 .hero::after {
@@ -172,14 +181,67 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
   height: 34%;
   background: linear-gradient(0deg, rgba(16, 34, 49, 0.54), rgba(16, 34, 49, 0));
   pointer-events: none;
 }
 
+.hero-media,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media {
+  z-index: 0;
+}
+
+.hero-slide {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  animation: heroFade 18s infinite;
+}
+
+.hero-slide-one {
+  background-image: url("assets/cmu-av-poster-demo.jpg");
+  background-position: center 48%;
+}
+
+.hero-slide-two {
+  background-image: url("assets/safety21-symposium-poster.jpg");
+  background-position: center 48%;
+  animation-delay: 6s;
+}
+
+.hero-slide-three {
+  background-image: url("assets/mill19-buttigieg-av-demo.jpg");
+  background-position: center;
+  animation-delay: 12s;
+}
+
+@keyframes heroFade {
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  38%,
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(100%, var(--max-width));
   margin: 0 auto;
 }
@@ -535,9 +597,24 @@ h1 {
   .hero {
     min-height: 84vh;
     padding: 108px 18px 54px;
+  }
+
+  .hero::before {
     background:
-      linear-gradient(90deg, rgba(10, 24, 36, 0.9) 0%, rgba(10, 24, 36, 0.62) 100%),
-      url("assets/hero-portfolio.png") center / cover no-repeat;
+      linear-gradient(90deg, rgba(10, 24, 36, 0.94) 0%, rgba(10, 24, 36, 0.72) 100%),
+      linear-gradient(0deg, rgba(10, 24, 36, 0.34), rgba(10, 24, 36, 0.14));
+  }
+
+  .hero-slide-one {
+    background-position: 52% center;
+  }
+
+  .hero-slide-two {
+    background-position: 58% center;
+  }
+
+  .hero-slide-three {
+    background-position: 58% center;
   }
 
   h1 {
@@ -600,5 +677,15 @@ h1 {
   .contact-links a,
   .contact-placeholder {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+  }
+
+  .hero-slide-one {
+    opacity: 1;
   }
 }

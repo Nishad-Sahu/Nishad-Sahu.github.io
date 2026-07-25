@@ -18,7 +18,9 @@ The first content pass was built from public profile and publication pages:
 - `index.html`: site content and structure
 - `styles.css`: visual design and responsive layout
 - `script.js`: mobile navigation and footer year
-- `assets/hero-portfolio.png`: generated hero/social visual
+- `assets/cmu-av-poster-demo.jpg`: CMU autonomous vehicle poster/demo hero photo
+- `assets/safety21-symposium-poster.jpg`: Safety21 symposium poster hero photo
+- `assets/mill19-buttigieg-av-demo.jpg`: Mill 19 autonomous vehicle demo hero photo
 - `.nojekyll`: tells GitHub Pages to serve the static files directly
 
 ## Publish On GitHub Pages
